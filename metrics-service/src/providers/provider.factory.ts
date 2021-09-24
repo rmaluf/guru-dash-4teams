@@ -8,6 +8,7 @@ import {getBambooMetrics} from "./bamboo/bamboo.provider";
 import {getSonarMetrics} from "./sonar/sonar.provider";
 import {getStrapiMetrics} from "./strapi/strapi.provider";
 import {getJiraMetrics} from "./jira/jira.provider";
+import {getJenkinsMetrics} from "./jenkins/jenkins.provider";
 
 const providers: Record<string, ProviderFunction> = {
   azure: getAzureMetrics,
@@ -15,6 +16,7 @@ const providers: Record<string, ProviderFunction> = {
   sonar: getSonarMetrics,
   strapi: getStrapiMetrics,
   jira: getJiraMetrics,
+  jenkins: getJenkinsMetrics,
 };
 
 export async function providerFactory(datasource: IDataSource) {
