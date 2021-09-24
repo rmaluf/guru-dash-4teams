@@ -1,4 +1,4 @@
-import { IJenkinsMeasure, IJenkinsMeasureResponse, IJenkinsMetadata } from './Jenkins.types';
+import { IJenkinsMeasure, IJenkinsMeasureResponse, IJenkinsMetadata } from './jenkins.types';
 import { IPoint } from 'influx';
 import { logger } from '../../shared/logger';
 import axios from 'axios';
