@@ -1,9 +1,8 @@
 export interface IJenkinsMetadata {
-    key: string;
-    url: string;
-    projects: string[];
-    metrics: string[];
-  }
+  url: string;
+  job: string;
+  branch: string;
+}
 
 export interface IJenkinsProjectResponse {
   paging: {
@@ -44,12 +43,7 @@ interface IJenkinsMetric {
 }
 
 export interface IJenkinsMeasureResponse {
-  paging: {
-    pageIndex: number;
-    pageSize: number;
-    total: number;
-  };
-  measures: IJenkinsMeasure[]
+  measure: IJenkinsMeasure
 }
 
 export interface IJenkinsMeasure {
@@ -58,6 +52,7 @@ export interface IJenkinsMeasure {
 }
 
 interface IJenkinsMeasureHistory {
+  measurement: string;
   date: string;
   value: string;
 }
