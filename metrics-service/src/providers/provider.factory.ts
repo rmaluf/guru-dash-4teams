@@ -34,3 +34,4 @@ export async function providerFactory(datasource: IDataSource) {
     return new InfluxDB(process.env.INFLUXDB!).writePoints(metrics);
   }
 }
+ 

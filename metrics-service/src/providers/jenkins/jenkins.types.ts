@@ -1,7 +1,7 @@
 export interface IJenkinsMetadata {
   url: string;
-  job: string;
-  branch: string;
+  jobs: string[];
+  branches: string[];
 }
 
 export interface IJenkinsProjectResponse {
@@ -43,15 +43,12 @@ interface IJenkinsMetric {
 }
 
 export interface IJenkinsMeasureResponse {
-  measure: IJenkinsMeasure
+  measurement: string;
+  date: string;
+  value: string;
 }
 
 export interface IJenkinsMeasure {
-  metric: string;
-  history: IJenkinsMeasureHistory[];
-}
-
-interface IJenkinsMeasureHistory {
   measurement: string;
   date: string;
   value: string;
