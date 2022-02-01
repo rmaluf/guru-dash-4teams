@@ -28,7 +28,6 @@
       },
       "id": 14,
       "panels": [],
-      "title": "",
       "type": "row"
     },
     {
@@ -39,12 +38,6 @@
       "datasource": "influxdb",
       "fieldConfig": {
         "defaults": {
-          "color": {},
-          "custom": {},
-          "thresholds": {
-            "mode": "absolute",
-            "steps": []
-          },
           "unit": "none"
         },
         "overrides": []
@@ -75,7 +68,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -174,7 +167,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -206,7 +198,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "groupBy": [
@@ -260,7 +252,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "max": 3600000,
           "min": 1,
@@ -301,7 +292,7 @@
         "showThresholdMarkers": false,
         "text": {}
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "alias": "Build",
@@ -472,7 +463,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "max": 600000,
           "min": 0,
@@ -512,7 +502,7 @@
         "showThresholdMarkers": false,
         "text": {}
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "alias": "avg",
@@ -618,12 +608,6 @@
       "datasource": "influxdb",
       "fieldConfig": {
         "defaults": {
-          "color": {},
-          "custom": {},
-          "thresholds": {
-            "mode": "absolute",
-            "steps": []
-          },
           "unit": "none"
         },
         "overrides": []
@@ -654,7 +638,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -754,7 +738,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "max": 3600000,
           "min": 0,
@@ -797,7 +780,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "groupBy": [],
@@ -829,7 +812,20 @@
       "datasource": "influxdb",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -867,7 +863,7 @@
       "pluginVersion": "7.4.1",
       "targets": [
         {
-          "alias": "Unit/Integration",
+          "alias": "Unit",
           "groupBy": [
             {
               "params": [
@@ -924,7 +920,7 @@
           "hide": false,
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT SUM(valuePerProject) FROM (SELECT LAST(\"value\") as valuePerProject FROM \"component_tests\" GROUP BY \"project\")",
+          "query": " SELECT sum(value) FROM \"components-test-measure\" WHERE time > now() -5m",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "time_series",
@@ -963,7 +959,7 @@
           "hide": false,
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT SUM(valuePerProject)  FROM (SELECT LAST(\"value\") as valuePerProject FROM \"e2e_tests\" GROUP BY \"project\")",
+          "query": " SELECT value FROM \"end2end-test-measure\" WHERE time > now() -5m",
           "rawQuery": true,
           "refId": "C",
           "resultFormat": "time_series",
@@ -996,7 +992,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "decimals": 0,
           "mappings": [],
           "thresholds": {
@@ -1036,7 +1031,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "groupBy": [
@@ -1084,7 +1079,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1115,7 +1109,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "alias": "Tech Debt (wd)",
@@ -1404,7 +1398,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1435,7 +1428,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "7.5.4",
       "targets": [
         {
           "alias": "SAST Vulnerabilities",
